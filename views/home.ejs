@@ -1,20 +1,45 @@
 <link rel="stylesheet" href="/css/home.css" />
 <div class="homePageBack">
-  <div class="content-panel">
+  <div class="content-panel animate__animated animate__fadeInLeft" id="loginPanel">
     <div class="wrapper"><strong><center><font color="#f7376a">CLAN</font> APP</center></strong></div>
     <div class="wrapper">Welcome, Log In</div>
-    <form action="" method="POST">
+    <form method="POST">
       <label for="">E-Mail</label>
-      <input type="text" placeholder="" name="username"> </input>
+      <input type="text" placeholder="" name="email"> </input>
       <label for="">Password</label>
-      <input type="password" placeholder="" name="psw"> </input>
+      <input type="password" placeholder="" name="password"> </input>
       <center><button type="submit">Login</button></center>
     </form>
     <div class="register">
-        Do not have an account? <a href="">Register</a> or, <a href="">Forgot Password?</a>
+        Do not have an account? <a href="#" onclick="return toggleLogin()">Register</a> or, <a href="#">Forgot Password?</a>
     </div>
   </div>
-  <div class="logo-panel">
+  <div class="content-panel animate__animated animate__fadeInLeft noneDisplay" id="RegisterPanel">
+    <div class="wrapper"><strong><center><font color="#f7376a">CLAN</font> APP</center></strong></div>
+    <div class="wrapper">Register your self</div>
+    <form method="POST">
+        <label for="">Name</label>
+      <input type="text" placeholder="" name="name"> </input>
+      <label for="">E-Mail</label>
+      <input type="text" placeholder="" name="email"> </input>
+      <label for="">Password</label>
+      <input type="password" placeholder="" name="password"> </input>
+      <center><button type="submit">Register</button></center>
+    </form>
+    <div class="register">
+        Have an account? <a href="#" onclick="return toggleLogin()">Login</a> 
+    </div>
+  </div>
+  <div class="logo-panel animate__animated animate__backInDown">
       <strong>LOGO</strong>
   </div>
 </div>
+
+<script>
+    function toggleLogin() {
+       var loginelement = document.getElementById("loginPanel");
+       var registerelement = document.getElementById("RegisterPanel")
+       loginelement.classList.toggle("noneDisplay");
+       registerelement.classList.toggle("noneDisplay");
+    }
+</script>

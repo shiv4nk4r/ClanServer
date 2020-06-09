@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   margin: 20px 0px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ecf0f1;
@@ -100,8 +100,18 @@
   text-decoration: none;
 }
 
+.noneDisplay {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   .logo-panel {
     display: none;
+  }
+  .content-panel > form {
+    width: 80%;
+  }
+  .content-panel > form > input {
+    width: 90%;
   }
 }
