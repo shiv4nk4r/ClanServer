@@ -1,0 +1,31 @@
+{
+  "name": "ClanServer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiv4nk4r/ClanServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiv4nk4r/ClanServer/issues"
+  },
+  "homepage": "https://github.com/shiv4nk4r/ClanServer#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.8",
+    "nodemon": "^2.0.4"
+  }
+}
