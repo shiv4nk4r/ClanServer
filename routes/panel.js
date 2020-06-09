@@ -1,7 +1,6 @@
-const router = require("express").Router();
+const routerPanel = require("express").Router();
 
-router.get("/", (req, res) => {
-  res.send("PanelPage");
+routerPanel.get("/", (req, res) => {
+  res.render("panel");
 });
-
-module.exports = router;
+module.exports = routerPanel;

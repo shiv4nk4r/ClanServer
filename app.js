@@ -13,6 +13,7 @@ app.set("view engine", "ejs");
 const AuthRoute = require("./routes/Auth");
 const HomeRoute = require("./routes/Home");
 const PanelRoute = require("./routes/panel");
+const ErrorRoute = require("./routes/error");
 
 //Middlewares
 dotenv.config();
@@ -27,9 +28,10 @@ mongoose.connect(
 );
 
 //Handling Routes
-app.get("/", HomeRoute);
-app.get("/api/auth", AuthRoute);
-app.get("/panel", PanelRoute);
+app.use("/", HomeRoute);
+app.use("/api/auth", AuthRoute);
+app.use("/panel", PanelRoute);
+app.use("*", ErrorRoute);
 
 const port = process.env.port || 3000;
 app.listen(port, () => console.log("Server is running "));
