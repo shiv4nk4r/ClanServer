@@ -4,12 +4,65 @@
 }
 
 .menu {
-  flex: 1;
+  flex: 1.5;
   height: 100%;
-  background-color: #f7376a;
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .page-content {
   flex: 9;
   height: 100%;
+}
+
+.menu > .logo {
+  color: #fff;
+  padding: 20px 0px;
+  font-size: 1.5em;
+  width: 100%;
+  background-color: #34495e;
+}
+
+.user {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
+  padding: 5px 0px;
+  border-top: 3px solid #f90a48;
+  border-bottom: 1px solid #7f8c8d;
+}
+
+.user > .user-name {
+  font-size: 1em;
+  color: #fff;
+}
+
+.user-name > .user-tag {
+  color: #ecf0f1;
+}
+
+.user > img {
+  border-radius: 50%;
+  height: 70%;
+  margin: 0px 20px;
+  border: 2px solid #fff;
+}
+
+.menu > .menu-item {
+  height: 40px;
+  width: 100%;
+  padding: 5px 0px;
+  line-height: 40px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.menu > .menu-item:hover {
+  background-color: #34495e;
+  transition: all 0.3s ease;
 }
