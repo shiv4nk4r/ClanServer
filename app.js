@@ -16,6 +16,7 @@ const HomeRoute = require("./routes/Home");
 //Middlewares
 dotenv.config();
 app.use(express.urlencoded());
+app.use(express.static("public"));
 
 //connect to DB
 mongoose.connect(
