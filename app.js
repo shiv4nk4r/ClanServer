@@ -10,6 +10,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 //Importing All The Routes
+const panelRoute = require("./routes/panel");
 const AuthRoute = require("./routes/Auth");
 const HomeRoute = require("./routes/Home");
 
@@ -27,7 +28,8 @@ mongoose.connect(
 
 //Handling Routes
 app.get("/", HomeRoute);
+app.get("/panel", panelRoute);
 app.get("/api/auth", AuthRoute);
 
-const port = process.env.port || 8080;
+const port = process.env.port || 3000;
 app.listen(port, () => console.log("Server is running "));
