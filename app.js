@@ -25,8 +25,10 @@ mongoose.connect(
 );
 
 //Handling Routes
-app.get("/", HomeRoute);
+app.get("/", (req, res) => {
+  res.send("HomPage");
+});
 app.get("/api/auth", AuthRoute);
 
-const port = process.env.port || 8081;
+const port = process.env.port || 8080;
 app.listen(port, () => console.log("Server is running "));
