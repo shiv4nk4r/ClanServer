@@ -4,6 +4,7 @@ const app = express();
 const dotenv = require("dotenv");
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
+var cookieParser = require("cookie-parser");
 
 //EJS
 app.use(expressLayouts);
@@ -19,6 +20,7 @@ const ErrorRoute = require("./routes/error");
 dotenv.config();
 app.use(express.urlencoded());
 app.use(express.static("public"));
+app.use(cookieParser());
 
 //connect to DB
 mongoose.connect(
@@ -29,7 +31,7 @@ mongoose.connect(
 
 //Handling Routes
 app.use("/", HomeRoute);
-app.use("/api/auth", AuthRoute);
+app.use("/user", AuthRoute);
 app.use("/panel", PanelRoute);
 app.use("*", ErrorRoute);
 

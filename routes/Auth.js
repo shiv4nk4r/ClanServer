@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
   });
   try {
     const savedUser = await user.save();
-    res.send({ user: user._id });
+    res.redirect("/");
   } catch (err) {
     res.status(400).send(err);
   }
@@ -48,7 +48,16 @@ router.post("/login", async (req, res) => {
 
   //Create and assign a token
   const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.header("auth-token", token).send(token);
+  res
+    .cookie("token", token, {
+      maxAge: 3600000,
+    })
+    .redirect("/panel");
+});
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
 });
 
 module.exports = router;
